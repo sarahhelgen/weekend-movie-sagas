@@ -1,6 +1,12 @@
-
+import {useHistory} from 'react-router-dom';
 function AddMovies(){
-
+    
+    const history = useHistory;
+    
+    //will need to use local state to capture inputs
+    //check old projects from dev on how selects work with state
+    //all axios requests need to now to into index.js via sagas
+    
 
 
     return(

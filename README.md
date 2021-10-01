@@ -23,13 +23,15 @@ TO DO LIST:
     -  [] this page also needs a button that onclick brings you back to the home/list page
 - [x] add movies page (needs /addmovies route and component)
     -useDispatch
-    - [] need to make a form with:
+    - [x] need to make a form with:
         - [x] input field for movie title
         - [x] input field for movie poster url
         - [x] textarea for movie description
         - [x] dropdown menu (for the genres)
         - [x] save button - sends the data to the db and brings the user back to home/list page
     - [x] cancel button, which will also bring the user back to the home/list page
+    - [] need to write GET route for genre router
+        - [] will need M2M join query language for this
 
     - [] update readme
     - [] add code comments
