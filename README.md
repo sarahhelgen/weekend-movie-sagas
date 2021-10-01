@@ -24,12 +24,12 @@ TO DO LIST:
 - [x] add movies page (needs /addmovies route and component)
     -useDispatch
     - [] need to make a form with:
-        - [] input field for movie title
-        - [] input field for movie poster url
-        - [] textarea for movie description
-        - [] dropdown menu (for the genres)
-        - [] save button - sends the data to the db and brings the user back to home/list page
-    - [] cancel button, which will also bring the user back to the home/list page
+        - [x] input field for movie title
+        - [x] input field for movie poster url
+        - [x] textarea for movie description
+        - [x] dropdown menu (for the genres)
+        - [x] save button - sends the data to the db and brings the user back to home/list page
+    - [x] cancel button, which will also bring the user back to the home/list page
 
     - [] update readme
     - [] add code comments

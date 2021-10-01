@@ -18,7 +18,7 @@ function App() {
           <Details />
         </Route>
         {/* Add Movie page */}
-        <Route path="/movies">
+        <Route path="/addmovies">
           <AddMovies />
         </Route>
       </Router>
