@@ -17,10 +17,24 @@ TO DO LIST:
 - [] home/list page:
     - [x] -need to write route (Movie List component, /home)
     - [] when movie poster is clicked, user needs to be brought to /details view for that movie
+        - in MovieList, write a function to view movie details:
+        - useDispatch, type: 'FETCH_MOVIE_DETAILS, payload: movie
+        - useHistory to push to /details
+        - add 'FETCH_MOVIE_DETAILS' and fetchMovieDetails to rootsaga
+        - for saga, fetchMovieDetails generator function, axios GET with movie id. 
+        - check movie router and update querytext
+        - put will be 'SET_MOVIE_DETAILS' which should call a reducer.
+        - reducer: selectedMovie
+
+
+
+
 - [x] details page (needs /details route and component)
     - [] show all details including all genres for the selected movie - you'll need to store this data in redux
         - hint: you can make a get request for a specific movie. req.params and :id
     -  [] this page also needs a button that onclick brings you back to the home/list page
+
+
 - [x] add movies page (needs /addmovies route and component)
     -useDispatch
     - [x] need to make a form with:
