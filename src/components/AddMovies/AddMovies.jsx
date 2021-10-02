@@ -7,65 +7,57 @@ function AddMovies(){
     
     const dispatch = useDispatch();
     const history = useHistory;
-    const [newMovie, setNewMovie] = useState({  title: '', poster: '', description: '',});
-    const [newGenre, setNewGenre] = useState({ type : ''});
+    const [title, setTitle] = useState('');
+    const [poster, setPoster] = useState('');
+    const [description, setDescription] = useState('');
+    const [genre, setGenre ] = useState('');
+    
 
     const addNewMovie = (event) => {
         console.log('in addNewMovie');
         event.preventDefault();
-        dispatch({type: 'POST_MOVIE_TO_SERVER', payload: newMovie });
-        dispatch({type: 'POST_GENRE_TO_SERVER', payload: newGenre });
-        setNewMovie({  title: '', poster: '', description: '',});
-        setNewGenre({ type: ''});
+        const newMovie = {
+            title: title,
+            poster: poster,
+            description: description,
+            genre: genre,
+        }
+        console.log('The new movie is', newMovie );
+        dispatch({type:'POST_MOVIE_TO_SERVER', payload: newMovie})
+        history.push('/');
     }
 
-    const handleMovieChange = (event) => {
-        console.log('entering movie name');
-        setNewMovie({...setNewMovie, title: event.target.value})
-    }
-
-    const handlePosterChange = (event) => {
-        console.log('entering poster url');
-        setNewMovie({...setNewMovie, poster: event.target.value })
-    }
-    
-    const handleDescriptionChange = (event) => {
-        console.log('entering movie description');
-        setNewMovie({...setNewMovie, description: event.target.value});
-    }
-
-    const handleGenreChange = (event) => {
-        console.log('choosing movie genre');
-        setNewGenre({...setNewGenre, type: event.target.value });
+    const handleCancel = () => {
+        history.push('/');
     }
 
     return(
 
         <>
         <form onSubmit={addNewMovie}>
-            <input type="text" placeholder="movie title" value={newMovie.title} onChange={handleMovieChange}/>
-            <input type="text" placeholder="movie poster url" value={newMovie.poster} onChange={handlePosterChange}/>
-            <textarea value={newMovie.description} onChange={handleDescriptionChange}>
+            <input type="text" placeholder="movie title" value={title} onChange={(event) => setTitle(event.target.value)}/>
+            <input type="text" placeholder="movie poster url" value={poster} onChange={(event)=> setPoster(event.target.value)}/>
+            <textarea value={description} onChange={(event)=>setDescription(event.target.value)}>
                 Movie Description Here!
             </textarea>
-            <select onChange={handleGenreChange}>
-                <option>Adventure</option>
-                <option>Animated</option>
-                <option>Biographical</option>
-                <option>Comedy</option>
-                <option>Disaster</option>
-                <option>Drama</option>
-                <option>Epic</option>
-                <option>Fantasy</option>
-                <option>Musical</option>
-                <option>Romantic</option>
-                <option>Science Fiction</option>
-                <option>Space-Opera</option>
-                <option>Superhero</option>
+            <select onChange={(event) =>setGenre(event.target.value)}>
+                <option value={1}>Adventure</option>
+                <option value={2}>Animated</option>
+                <option value={3}>Biographical</option>
+                <option value={4}>Comedy</option>
+                <option value={5}>Disaster</option>
+                <option value={6}>Drama</option>
+                <option value={7}>Epic</option>
+                <option value={8}>Fantasy</option>
+                <option value={9}>Musical</option>
+                <option value={10}>Romantic</option>
+                <option value={11}>Science Fiction</option>
+                <option value={12}>Space-Opera</option>
+                <option value={13}>Superhero</option>
             </select>
             <button type="submit">Save</button>
         </form>
-        <button>Cancel</button>
+        <button onClick={handleCancel}>Cancel</button>
         </>
     )
 }

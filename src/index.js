@@ -17,7 +17,6 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIE_DETAILS', fetchMovieDetails);
     yield takeEvery('FETCH_GENRE_DETAILS', fetchGenreDetails);
     yield takeEvery('POST_MOVIE_TO_SERVER', postMovieToServer );
-    yield takeEvery('POST_GENRE_TO_SERVER', postGenreToServer );
 
 }
 
@@ -33,17 +32,6 @@ function* postMovieToServer (action) {
 
 }
 
-function* postGenreToServer (action) {
-    console.log('postGenreToServer saga firing');
-    try{
-        yield axios.post('/api/genre', action.payload );
-        yield put({type: 'SET_GENRES'});
-    } catch (error) {
-        console.error('error in posting genre data to server', error );
-        alert('error in posting genre data to server!');
-    }
-}
-
 function* fetchMovieDetails(action) {
     console.log('fetchMovieDetails saga triggered');
     try {
@@ -55,7 +43,6 @@ function* fetchMovieDetails(action) {
         alert('unable to get movie details!');
     }
 }
-
 
 function* fetchGenreDetails(action) {
     console.log('fetchGenreDetails saga triggered');

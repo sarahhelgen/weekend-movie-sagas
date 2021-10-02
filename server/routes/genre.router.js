@@ -24,4 +24,15 @@ router.get('/:id', (req, res) => {
 
 });
 
+router.post('/', (req,res) => {
+  const newGenre = req.body;
+  const queryText = `INSERT INTO "genres" ("name") VALUES ($1)`;
+  pool.query(queryText, [newGenre])
+  .then (result =>{
+    res.sendStatus(201);
+  }).catch (error =>{
+    res.sendStatus(500);
+  })
+})
+
 module.exports = router;
