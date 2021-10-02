@@ -31,7 +31,7 @@ function* fetchMovieDetails(action) {
 }
 
 
-function* fetchGenreDetails() {
+function* fetchGenreDetails(action) {
     console.log('fetchGenreDetails saga triggered');
     try {
         const movieId = action.payload;
@@ -103,6 +103,8 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        genreDetailReducer,
+        movieDetailReducer,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

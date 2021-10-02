@@ -22,7 +22,7 @@ router.get('/:id', (req,res) =>{
   const queryText = `SELECT * FROM movies WHERE id=$1`;
   pool.query(queryText, [movieId])
   .then(result =>{
-    res.send(results.rows);
+    res.send(result.rows);
   }).catch(error =>{
     console.log('error getting movie details', error );
     res.sendStatus(500);
