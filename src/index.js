@@ -18,20 +18,29 @@ function* rootSaga() {
     yield takeEvery('FETCH_GENRE_DETAILS', fetchGenreDetails );
 }
 
-function* fetchMovieDetails() {
+function* fetchMovieDetails(action) {
     console.log('fetchMovieDetails saga triggered');
-//     try {
-//         const movie = action.payload;
-//         const movieDetails = yield axios.get(`/api/movie/details/${movie.id}`);
-//         yield put({ type: 'SET_MOVIE_DETAILS', movieDetails.data });
-//     } catch (error) {
-//         console.error('ERROR in fetchMovieDetails', error);
-//         alert('unable to get movie details!');
-//     }
+    try {
+        const movieId = action.payload;
+        const movieDetails = yield axios.get(`/api/movie/${movieId}`);
+        yield put({ type: 'SET_MOVIE_DETAILS', payload: movieDetails.data });
+    } catch (error) {
+        console.error('ERROR in fetchMovieDetails', error);
+        alert('unable to get movie details!');
+    }
 }
+
 
 function* fetchGenreDetails() {
     console.log('fetchGenreDetails saga triggered');
+    try {
+        const movieId = action.payload;
+        const movieDetails = yield axios.get(`/api/genre/${movieId}`)
+        yield put({ type: 'SET_GENRE_DETAILS', payload: movieDetails.data})
+    } catch (error) {
+        console.error('ERROR in fetchGenreDetails', error );
+        alert('unable to get genre details!');
+    }
 }
 
 function* fetchAllMovies() {
@@ -50,6 +59,26 @@ function* fetchAllMovies() {
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
+
+//movie detail reducer
+
+const movieDetailReducer = (state = [], action ) =>{
+    switch(action.type){
+        case 'SET_MOVIE_DETAILS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+//genre detail reducer
+const genreDetailReducer = (state=[], action) =>{
+    switch(action.type){
+        case 'SET_GENRE_DETAILS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
