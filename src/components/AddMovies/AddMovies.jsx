@@ -9,7 +9,7 @@ function AddMovies(){
     const history = useHistory;
     const [newMovie, setNewMovie] = useState({  name: '', url: '', description: '',});
     const [newGenre, setNewGenre] = useState({ type : ''});
-
+    
     const addNewMovie = (event) => {
         console.log('in addNewMovie');
         event.preventDefault();
@@ -39,15 +39,13 @@ function AddMovies(){
         setNewGenre({...setNewGenre, type: event.target.value });
     }
 
-
-
     return(
 
         <>
         <form onSubmit={addNewMovie}>
             <input type="text" placeholder="movie title" value={newMovie.title} onChange={handleMovieChange}/>
             <input type="text" placeholder="movie poster url" value={newMovie.poster} onChange={handlePosterChange}/>
-            <textarea value={newMovie.description} handleChange={handleDescriptionChange}>
+            <textarea value={newMovie.description} onChange={handleDescriptionChange}>
                 Movie Description Here!
             </textarea>
             <select onChange={handleGenreChange}>
@@ -68,9 +66,7 @@ function AddMovies(){
             <button type="submit">Save</button>
         </form>
         <button>Cancel</button>
-
         </>
-
     )
 }
 

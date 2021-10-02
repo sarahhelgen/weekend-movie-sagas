@@ -16,6 +16,18 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_MOVIE_DETAILS', fetchMovieDetails);
     yield takeEvery('FETCH_GENRE_DETAILS', fetchGenreDetails);
+    yield takeEvery('POST_MOVIE_TO_SERVER', postMovieToServer );
+    yield takeEvery('POST_GENRE_TO_SERVER', postGenreToServer );
+
+}
+
+function* postMovieToServer (action) {
+    console.log('postMovieToServer saga firing');
+
+}
+
+function* postGenreToServer (action) {
+    console.log('postGenreToServer saga firing');
 }
 
 function* fetchMovieDetails(action) {
@@ -60,7 +72,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 
 //movie detail reducer
-
 const movieDetailReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIE_DETAILS':
