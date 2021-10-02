@@ -1,3 +1,4 @@
+import { getThemeProps } from '@material-ui/styles';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
@@ -16,11 +17,11 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const viewSelectedMovie = () => {
+    const viewSelectedMovie = (movieId) => {
         console.log('in viewSelectedMovie'); //click handler is working
-       
-        dispatch({ type: 'FETCH_MOVIE_DETAILS', payload: movies.id });
-        //payload is the individual movie, which comes from the map below.
+        dispatch({ type: 'FETCH_MOVIE_DETAILS', payload: movieId });
+        dispatch({ type: 'FETCH_GENRE_DETAILS', payload: movieId });
+        //payload is the movieId, need to fetch from both movie and genre routers
         history.push('/details');
     }
 
@@ -30,7 +31,7 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} onClick={viewSelectedMovie}>
+                        <div key={movie.id} onClick={(event) => viewSelectedMovie(movie.id)}>
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title} />
                         </div>

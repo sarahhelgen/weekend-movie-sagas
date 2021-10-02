@@ -16,10 +16,10 @@ TO DO LIST:
 
 - [] home/list page:
     - [x] -need to write route (Movie List component, /home)
-    - [] when movie poster is clicked, user needs to be brought to /details view for that movie
+    - [x] when movie poster is clicked, user needs to be brought to /details view for that movie
       - useDispatch, type: 'FETCH_MOVIE_DETAIL, payload: movie [x]
-        - useHistory to push to /details
-        - add 'FETCH_MOVIE_DETAIL' and fetchMovieDetails to rootsaga
+        - useHistory to push to /details [x]
+        - add 'FETCH_MOVIE_DETAIL' and fetchMovieDetails to rootsaga [x]
         - for saga, fetchMovieDetails generator function, axios GET with movie id.   
 
 - [x] details page (needs /details route and component)
