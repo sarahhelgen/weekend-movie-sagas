@@ -22,16 +22,12 @@ function Details() {
                     <p> Movie Description: {movie.description}</p>
                 </div>
             )}
-
             <h3>Genre Details</h3>
             {genreDetails.map((genre) =>
                 <div>
                     <p>Genre: {genre.name}</p>
                 </div>
             )}
-
-
-
             <button onClick={backToHome}>Back to Home</button>
         </div>
 
