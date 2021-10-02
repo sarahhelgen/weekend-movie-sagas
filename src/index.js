@@ -23,11 +23,25 @@ function* rootSaga() {
 
 function* postMovieToServer (action) {
     console.log('postMovieToServer saga firing');
+    try{
+        yield axios.post('/api/movie', action.payload );
+        yield put({type: 'SET_MOVIES'})
+    } catch (error) {
+        console.error('error posting movie data to server', error );
+        alert('error in posting movie data to server!');
+    }
 
 }
 
 function* postGenreToServer (action) {
     console.log('postGenreToServer saga firing');
+    try{
+        yield axios.post('/api/genre', action.payload );
+        yield put({type: 'SET_GENRES'});
+    } catch (error) {
+        console.error('error in posting genre data to server', error );
+        alert('error in posting genre data to server!');
+    }
 }
 
 function* fetchMovieDetails(action) {

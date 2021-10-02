@@ -7,26 +7,26 @@ function AddMovies(){
     
     const dispatch = useDispatch();
     const history = useHistory;
-    const [newMovie, setNewMovie] = useState({  name: '', url: '', description: '',});
+    const [newMovie, setNewMovie] = useState({  title: '', poster: '', description: '',});
     const [newGenre, setNewGenre] = useState({ type : ''});
-    
+
     const addNewMovie = (event) => {
         console.log('in addNewMovie');
         event.preventDefault();
         dispatch({type: 'POST_MOVIE_TO_SERVER', payload: newMovie });
         dispatch({type: 'POST_GENRE_TO_SERVER', payload: newGenre });
-        setNewMovie({  name: '',url: '', description: '',});
+        setNewMovie({  title: '', poster: '', description: '',});
         setNewGenre({ type: ''});
     }
 
     const handleMovieChange = (event) => {
         console.log('entering movie name');
-        setNewMovie({...setNewMovie, name: event.target.value})
+        setNewMovie({...setNewMovie, title: event.target.value})
     }
 
     const handlePosterChange = (event) => {
         console.log('entering poster url');
-        setNewMovie({...setNewMovie, url: event.target.value })
+        setNewMovie({...setNewMovie, poster: event.target.value })
     }
     
     const handleDescriptionChange = (event) => {
