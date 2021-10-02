@@ -20,14 +20,15 @@ TO DO LIST:
       - useDispatch, type: 'FETCH_MOVIE_DETAIL, payload: movie [x]
         - useHistory to push to /details [x]
         - add 'FETCH_MOVIE_DETAIL' and fetchMovieDetails to rootsaga [x]
-        - for saga, fetchMovieDetails generator function, axios GET with movie id.   
+        - add 'FETCH_GENRE_DTAIL' and fetchGenreDetails to root saga [x]
+        - for saga, fetchMovieDetails and fetchGenreDetails generator function, axios GET with movie id. [x]  
 
 - [x] details page (needs /details route and component)
 - in MovieList, write a function to view movie details:
         
         - check movie router and update querytext
-        - put will be 'SET_MOVIE_DETAILS' which should call a reducer.
-        - reducer: selectedMovie
+        - put will be 'SET_MOVIE_DETAILS' which should call a reducer. [x]
+        - reducer: selectedMovie [x]
     - [] show all details including all genres for the selected movie - you'll need to store this data in redux
     - useSelector to display the info on the dom.
         - hint: you can make a get request for a specific movie. req.params and :id

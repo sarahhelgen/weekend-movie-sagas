@@ -15,7 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_MOVIE_DETAILS', fetchMovieDetails);
-    yield takeEvery('FETCH_GENRE_DETAILS', fetchGenreDetails );
+    yield takeEvery('FETCH_GENRE_DETAILS', fetchGenreDetails);
 }
 
 function* fetchMovieDetails(action) {
@@ -36,9 +36,9 @@ function* fetchGenreDetails() {
     try {
         const movieId = action.payload;
         const movieDetails = yield axios.get(`/api/genre/${movieId}`)
-        yield put({ type: 'SET_GENRE_DETAILS', payload: movieDetails.data})
+        yield put({ type: 'SET_GENRE_DETAILS', payload: movieDetails.data })
     } catch (error) {
-        console.error('ERROR in fetchGenreDetails', error );
+        console.error('ERROR in fetchGenreDetails', error);
         alert('unable to get genre details!');
     }
 }
@@ -49,7 +49,6 @@ function* fetchAllMovies() {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-
     } catch {
         console.log('get all error');
     }
@@ -62,8 +61,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 //movie detail reducer
 
-const movieDetailReducer = (state = [], action ) =>{
-    switch(action.type){
+const movieDetailReducer = (state = [], action) => {
+    switch (action.type) {
         case 'SET_MOVIE_DETAILS':
             return action.payload;
         default:
@@ -71,8 +70,8 @@ const movieDetailReducer = (state = [], action ) =>{
     }
 }
 //genre detail reducer
-const genreDetailReducer = (state=[], action) =>{
-    switch(action.type){
+const genreDetailReducer = (state = [], action) => {
+    switch (action.type) {
         case 'SET_GENRE_DETAILS':
             return action.payload;
         default:
