@@ -9,17 +9,18 @@ router.get('/', (req, res) => {
 
 //get route to retrieve genre details with many to many join
 router.get('/:id', (req, res) => {
-  const movieId = req.params.id;
-  const queryText = `SELECT "genres"."name" from "genres"
-  JOIN "movies_genres" ON "movies_genres"."genre_id"="genres"."id"
-  JOIN "movies" ON "movies_genres"."movie_id" = "movies"."id" WHERE "movies"."id"=$1;`;
-  pool.query(queryText, [movieId])
-    .then(result => {
+  const queryString = `SELECT "genres".name, "movies".description FROM "movies_genres"
+  JOIN "genres" ON "genres".id = "movies_genres".genre_id
+  JOIN "movies" ON "movies".id = "movies_genres".movie_id
+  WHERE "movies".id = ($1)`;
+  pool.query(queryString, [req.params.id])
+    .then( result => {
       res.send(result.rows);
-    }).catch(error => {
-      console.log('error getting genre details', error);
-      res.sendStatus(500);
-    });
+    })
+    .catch(err => {
+      console.log('error in GET genre ', err);
+      res.sendStatus(500)
+    })
 
 });
 
