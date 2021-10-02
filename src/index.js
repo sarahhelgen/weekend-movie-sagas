@@ -24,7 +24,7 @@ function* postMovieToServer (action) {
     console.log('postMovieToServer saga firing');
     try{
         yield axios.post('/api/movie', action.payload );
-        yield put({type: 'SET_MOVIES'})
+        yield put({type: 'ADD_MOVIE'})
     } catch (error) {
         console.error('error posting movie data to server', error );
         alert('error in posting movie data to server!');
@@ -95,6 +95,8 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
+        case 'ADD_MOVIE':
+            return [...state, action.payload]    
         default:
             return state;
     }

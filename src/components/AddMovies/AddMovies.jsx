@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 function AddMovies(){
     
     const dispatch = useDispatch();
-    const history = useHistory;
+    const history = useHistory();
     const [title, setTitle] = useState('');
     const [poster, setPoster] = useState('');
     const [description, setDescription] = useState('');
