@@ -23,8 +23,9 @@ function* rootSaga() {
 function* postMovieToServer (action) {
     console.log('postMovieToServer saga firing');
     try{
-        yield axios.post('/api/movie', action.payload );
-        yield put({type: 'ADD_MOVIE'})
+        const response = yield axios.post('/api/movie', action.payload );
+        console.log('Response from the DB is', response.data );
+        yield put({type: 'ADD_MOVIE', payload: action.payload})
     } catch (error) {
         console.error('error posting movie data to server', error );
         alert('error in posting movie data to server!');
