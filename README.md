@@ -4,15 +4,17 @@
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 2 day sprint
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Created a movie management application using React Redux and Redux Sagas. A user can click on a movie image poster and be taken to a details page where they can view details on the movie as well as genre details. By clicking on the add a movie button, a user can input their own movies into the database to be listed on the movie poster page.
+
+Deployed version of the app can be found here: (will add once deployed to Heroku)
 
 TO DO LIST:
 
 - [x] npm installs
 - [x] set up db
-- [ ] many to many join
+- [ x] many to many join
 
 - [] home/list page:
     - [x] -need to write route (Movie List component, /home)
@@ -58,3 +60,23 @@ TO DO LIST:
     - [] update readme
     - [] add code comments
     - [] style a bit with material UI
+
+    ## Installation
+
+    1. Create a database called 'saga_movies_weekend'
+    2. The queries in the 'database.sql' file are all set up for you. This project was built in Postgres, so you will need to have that installed and I'd recommed using Postico to run queries, as that is what I used to test my data.
+    3. Open your code editor and run an `npm install` in your terminal
+    4. Run `npm run client` and `npm run server`
+    5. Open on `localhost:3000`, server is on `localhost:5000`
+
+    ## Screen Shots
+    Screen shots will go here once I've updated styling.
+
+    ## Built with
+    React, Redux, Redux Sagas, Postgresql, Node.js, Axios, Express, PG
+
+    ## Acknowledgement:
+    Thanks to my instructors Chris, Liz, Dane, and Kris and everyone at Prime for helping me learn the skills to build this app!
+
+    ## Support
+    If you have feedback or issues with the app, please reach out to me at sarah.helgen@gmail.com
