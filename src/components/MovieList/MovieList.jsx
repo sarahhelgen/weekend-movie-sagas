@@ -17,6 +17,8 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+        //on click of a movie poster, dispatching an action to sagas with the movieId
+        //and then taking the user to the movie detail page
     const viewSelectedMovie = (movieId) => {
         console.log('in viewSelectedMovie'); //click handler is working
         dispatch({ type: 'FETCH_MOVIE_DETAILS', payload: movieId });
@@ -24,7 +26,7 @@ function MovieList() {
         //payload is the movieId, need to fetch from both movie and genre routers
         history.push('/details');
     }
-
+    //will take the user to the add movie page on click of the button
     const addMoviePage = () => {
         history.push('/addmovies');
     }
