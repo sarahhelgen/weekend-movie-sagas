@@ -43,7 +43,7 @@ I created the following to do list to complete this project:
         - save button - sends the data to the db and brings the user back to home/list page
         - cancel button, which will also bring the user back to the home/list page
     - use local state to capture inputs of form
-    - [x] on click of submit button, send the new movie data to db via POST. 
+    - on click of submit button, send the new movie data to db via POST. 
     - need to use saga for this: type: 'SEND_NEW_MOVIE_DATA'
 
 - Other to dos:
