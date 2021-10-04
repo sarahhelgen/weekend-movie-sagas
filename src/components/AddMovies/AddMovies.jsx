@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux';
 
 function AddMovies(){
     
+    //using local state to capture user inputs for data to be sent to server
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState('');
@@ -12,7 +13,8 @@ function AddMovies(){
     const [description, setDescription] = useState('');
     const [genre, setGenre ] = useState('');
     
-
+    // on click of submit button, function will capture user inputs, wrap them into a new movie object and post the object to the
+    //database via sagas, then will return the user to the movie poster page
     const addNewMovie = (event) => {
         console.log('in addNewMovie');
         event.preventDefault();
@@ -26,7 +28,7 @@ function AddMovies(){
         dispatch({type:'POST_MOVIE_TO_SERVER', payload: newMovie})
         history.push('/');
     }
-
+    //will send the user back to the home page
     const handleCancel = () => {
         history.push('/');
     }

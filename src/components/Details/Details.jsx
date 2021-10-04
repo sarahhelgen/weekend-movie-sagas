@@ -15,11 +15,12 @@ function Details() {
 
         // {JSON.stringify(movieDetails)}
         // {JSON.stringify(genreDetails)}
+        // mapping over the moviedetails array and movie genres array to display on DOM
         <div>
             <h3>Movie Details</h3>
             {movieDetails.map((movie) =>
                 <div>
-                    <p>  Movie Name: {movie.title} </p>
+                    <p> Movie Name: {movie.title} </p>
                     <p> Movie Description: {movie.description}</p>
                     <img src={movie.poster} />
                 </div>
