@@ -25,9 +25,14 @@ function MovieList() {
         history.push('/details');
     }
 
+    const addMoviePage = () => {
+        history.push('/addmovies');
+    }
+
     return (
         <main>
             <h1>MovieList</h1>
+            <button onClick={addMoviePage}>Add a Movie </button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
@@ -35,6 +40,7 @@ function MovieList() {
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title} />
                         </div>
+                        
                     );
                 })}
             </section>
