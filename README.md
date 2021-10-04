@@ -33,23 +33,23 @@ I created the following to do list to complete this project:
     - needs a button that onclick brings you back to the home/list page
 
 
-- [x] add movies page (needs /addmovies route and component)
-    -useDispatch
-    - [x] need to make a form with:
-        - [x] input field for movie title
-        - [x] input field for movie poster url
-        - [x] textarea for movie description
-        - [x] dropdown menu (for the genres)
-        - [x] save button - sends the data to the db and brings the user back to home/list page
-    - [x] cancel button, which will also bring the user back to the home/list page
+- Add Movies Page
+    - needs /addmovies route and component
+    - need to make a form with:
+        - input field for movie title
+        - input field for movie poster url
+        - textarea for movie description
+        - dropdown menu (for the genres)
+        - save button - sends the data to the db and brings the user back to home/list page
+        - cancel button, which will also bring the user back to the home/list page
+    - use local state to capture inputs of form
+    - [x] on click of submit button, send the new movie data to db via POST. 
+    - need to use saga for this: type: 'SEND_NEW_MOVIE_DATA'
 
-    - [x] use localstate to capture inputs of form
-    - [x] onclick of submit button, send the new movie data to db via POST. 
-    - need to use saga for this:
-        type: 'SEND_NEW_MOVIE_DATA'
-    - [x] update readme
-    - [x] add code comments
-    - [] style a bit with material UI (still need to do this)
+- Other to dos:
+    - update readme
+    - add code comments
+    - style a bit with material UI (still need to do this)
 
     ## Installation
 
