@@ -1,8 +1,10 @@
-import { getThemeProps } from '@material-ui/styles';
-import React, { useEffect } from 'react';
+
+import React from 'react';
+import {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import './MovieList.css'
+
 
 function MovieList() {
 
@@ -33,13 +35,13 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
+            {/* <h1>MovieList</h1> */}
             <button onClick={addMoviePage}>Add a Movie </button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} onClick={(event) => viewSelectedMovie(movie.id)}>
-                            <h3>{movie.title}</h3>
+                            <h3 className="movie-title">{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title} />
                         </div>
                         

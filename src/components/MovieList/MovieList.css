@@ -1,4 +1,9 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    
+}
+
+.movie-title {
+    font-family: 'Luckiest Guy';
 }

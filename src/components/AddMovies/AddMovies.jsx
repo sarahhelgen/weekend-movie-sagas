@@ -1,6 +1,7 @@
 import {useHistory} from 'react-router-dom';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import React from 'react';
 
 
 function AddMovies(){
@@ -35,7 +36,7 @@ function AddMovies(){
 
     return(
 
-        <>
+        
         <form onSubmit={addNewMovie}>
             <input type="text" placeholder="movie title" value={title} onChange={(event) => setTitle(event.target.value)}/>
             <input type="text" placeholder="movie poster url" value={poster} onChange={(event)=> setPoster(event.target.value)}/>
@@ -58,9 +59,10 @@ function AddMovies(){
                 <option value={13}>Superhero</option>
             </select>
             <button type="submit">Save</button>
+            <button onClick={handleCancel}>Cancel</button>
         </form>
-        <button onClick={handleCancel}>Cancel</button>
-        </>
+
+    
     )
 }
 

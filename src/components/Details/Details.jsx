@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import React from 'react';
 
 function Details() {
     //using redux store to get movie details and genre details to display on DOM
@@ -16,6 +17,7 @@ function Details() {
         // {JSON.stringify(movieDetails)}
         // {JSON.stringify(genreDetails)}
         // mapping over the moviedetails array and movie genres array to display on DOM
+        <div className="movie-details">
         <div>
             <h3>Movie Details</h3>
             {movieDetails.map((movie) =>
@@ -34,6 +36,7 @@ function Details() {
             )}
             {/* clicking this button will take you back to the movie poster page */}
             <button onClick={backToHome}>Back to Home</button>
+        </div>
         </div>
 
     )
