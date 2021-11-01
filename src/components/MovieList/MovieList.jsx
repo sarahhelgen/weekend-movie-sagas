@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieList.css';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 
 function MovieList() {
@@ -38,17 +39,21 @@ function MovieList() {
         <main>
             {/* <h1>MovieList</h1> */}
             <Button variant="contained" onClick={addMoviePage}>Add a Movie </Button>
+            <Box p={2}>
             <section className="movies">
                 {movies.map(movie => {
                     return (
+                        <Box p={1}>
                         <div key={movie.id} onClick={(event) => viewSelectedMovie(movie.id)}>
                             <h3 className="movie-title">{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title} />
                         </div>
+                        </Box>
                         
                     );
                 })}
             </section>
+            </Box>
         </main>
 
     );
