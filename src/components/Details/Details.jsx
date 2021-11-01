@@ -17,7 +17,7 @@ function Details() {
         // {JSON.stringify(movieDetails)}
         // {JSON.stringify(genreDetails)}
         // mapping over the moviedetails array and movie genres array to display on DOM
-        <div className="movie-details">
+        
         <div>
             <h3>Movie Details</h3>
             {movieDetails.map((movie) =>
@@ -36,7 +36,6 @@ function Details() {
             )}
             {/* clicking this button will take you back to the movie poster page */}
             <button onClick={backToHome}>Back to Home</button>
-        </div>
         </div>
 
     )

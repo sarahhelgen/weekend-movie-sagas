@@ -2,8 +2,9 @@
 import React from 'react';
 import {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
-import './MovieList.css'
+import { useHistory } from 'react-router-dom';
+import './MovieList.css';
+import Button from '@mui/material/Button';
 
 
 function MovieList() {
@@ -36,7 +37,7 @@ function MovieList() {
     return (
         <main>
             {/* <h1>MovieList</h1> */}
-            <button onClick={addMoviePage}>Add a Movie </button>
+            <Button variant="contained" onClick={addMoviePage}>Add a Movie </Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
