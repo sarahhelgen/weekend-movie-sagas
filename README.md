@@ -6,8 +6,6 @@ Duration: 2 day sprint
 
 Created a movie management application using React Redux and Redux Sagas. A user can click on a movie image poster and be taken to a details page where they can view details on the movie as well as genre details. By clicking on the add a movie button, a user can input their own movies into the database to be listed on the movie poster page.
 
-Deployed version of the app can be found here: (will add once deployed to Heroku)
-
 I created the following to do list to complete this project:
 
 - npm installs and db setup
