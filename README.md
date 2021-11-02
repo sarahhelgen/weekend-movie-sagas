@@ -60,7 +60,9 @@ I created the following to do list to complete this project:
     - Open on `localhost:3000`, server is on `localhost:5000`
 
     ## Screen Shots
-    Screen shots will go here once I've updated styling.
+
+   ![app image](/public/images/screenshot1.png)
+   ![app image](/public/images/screenshot2.png)
 
     ## Built with
     React, Redux, Redux Sagas, React Router Dom, Postgresql, Node.js, Axios, Express, PG
